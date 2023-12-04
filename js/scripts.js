@@ -26,30 +26,53 @@ const buttonGenera = document.getElementById('genera');
 
 buttonGenera.addEventListener("click", function(){
     //input dati
+    const nome = document.getElementById("name").value;
     const numeroKm = parseInt(document.querySelector("#chilometri").value);
-    const eta = parseInt(document.getElementById("eta").value);
+    const eta = document.getElementById("eta").value;
     console.log("numero chilometri", numeroKm , typeof numeroKm);
     console.log("eta", eta , typeof eta);
+    console.log("nome", nome , typeof nome);
     let prezzoBiglietto = numeroKm * 0.21;
+    let offerta = "Biglietto standard";
     console.log("prezzo biglietto", prezzoBiglietto, typeof prezzoBiglietto);
     //calcolo scontistica
+    
     if (((eta > 130) || (eta <= 1)) || ((numeroKm > 500) || (numeroKm < 10))){
         alert("Devi inserire un età compresa tra 1 e 130 e un numero di chilometri compreso tra 10 e 500")
     }
     else{
-        if (eta < 18) {
+        if (eta === "minorenne") {
             prezzoBiglietto *= 0.8;
+            offerta = "Biglietto scontato 20%";
         }
-        else if (eta >= 65){
+        else if (eta === "old"){
             prezzoBiglietto *= 0.6;
+            offerta = "Biglietto scontato 40%";
         }
         prezzoBiglietto = prezzoBiglietto.toFixed(2);
         console.log("prezzo biglietto scontato", prezzoBiglietto, typeof prezzoBiglietto)
+        
+        const numeroCarrozza = Math.floor((Math.random() * 20) + 1);
+        const numeroCp = Math.floor((Math.random() * 1000) + 8000);
         //output dati
-        document.querySelector(".prezzo").innerHTML = "Il prezzo è il seguente: € " + (prezzoBiglietto); 
+        /*
+        const notVisible = document.querySelector(".d-none");
+        notVisible.classList.toggle('d-none');
+        */
+;
+        document.querySelector(".prezzo").innerHTML = (prezzoBiglietto) + "€"; 
+        document.querySelector("#nomeCognome").innerHTML = nome;
+        document.querySelector("#offerta").innerHTML = offerta;
+        document.querySelector("#carrozza").innerHTML = numeroCarrozza;
+        document.querySelector("#codiceCp").innerHTML = numeroCp;
+        
     }
+
+
     //azzeramento campi
-    document.getElementById("chilometri").value="";
-    document.getElementById("eta").value="";
+    document.getElementById("name").value = "";
+    document.getElementById("chilometri").value = "";
+    document.getElementById("eta").value = "";
+    
 }
 )

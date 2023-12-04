@@ -24,17 +24,28 @@
                 <div class="col-12 bg-white border-radius-25 p-5 mb-5">
                    <form action="" method="get">
                         <div class="row  text-center">
-                            <div class="col-6">
+                            <div class="col">
+                                <label class="d-block" for="">
+                                    Nome Cognome
+                                </label>
+                                <input class="border-main border-radius-5" type="text" id="name" required>
+                            </div>
+                            <div class="col">
                                 <label  class="d-block" for="chilometri">
                                     Km da percorrere         
                                 </label>
                                 <input class="border-main border-radius-5" type="number" id="chilometri" required>
                             </div>
-                            <div class="col-6">
+                            <div class="col">
                                 <label class="d-block" for="">
                                     Età
                                 </label>
-                                <input class="border-main border-radius-5" type="number" id="eta" required>
+                                <select class="border-main border-radius-5 " name="" id="eta" required>
+                                    <option value="" disabled selected>seleziona un opzione</option>
+                                    <option value="maggiorenne">Maggiorenne</option>
+                                    <option value="minorenne">Minorenne</option>
+                                    <option value="old">Over 65</option>
+                                </select>
                             </div>
                             <div class="col-12 p-5">
                                 <button class="border-radius-25 text-main me-5" type="button" id="genera">
@@ -47,8 +58,41 @@
                         </div>   
                    </form>
                 </div>
-                <div class="col-12 bg-white border-radius-25 p-5">
-                    <p class="prezzo"></p>
+                <div id="titoloBiglietto" class="col-12">
+                    <h2 class="text-center text-white text-uppercase mb-5">il tuo biglietto</h2>
+                </div>
+                <div class="col-12 bg-white border-radius-25 p-5 ">
+                    <div class="row">
+                        <div class="col-12 mb-2">
+                            <h3 class=" text-uppercase ">dettagli passeggiero</h3>
+                        </div>
+                        <div class="col-3 d-flex flex-column justify-content-between"">
+                            <h5 class="text-uppercase">nome passeggero</h5>
+                            <span id="nomeCognome"></span>
+                        </div>
+                        <div class="col-2 d-flex flex-column justify-content-between"">
+                            <h6>Offerta</h6>
+                            <span id="offerta"></span>
+                        </div>
+                        <div class="col-1 d-flex flex-column justify-content-between"">
+                            <h6>Carrozza</h6>
+                            <span id="carrozza"></span>
+                        </div>
+                        <div class="col-2 d-flex flex-column justify-content-between"">
+                            <h6>Codice Cp</h6>
+                            <span class="align-self-center" id="codiceCp"></span>
+                        </div>
+                        <div class="col-2 d-flex flex-column justify-content-between">
+                            <h6>Costo biglietto</h6>
+                            <span class="prezzo align-self-center"></span>
+                        </div>
+                        <div class="col-2">
+                            <div class="container-img">
+                                <img src="./img/QR_Code_Example.svg.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    
                 </div>
             </div>
 
