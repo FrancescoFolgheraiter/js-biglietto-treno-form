@@ -22,6 +22,12 @@ Se non vi sentite particolarmente creativi, questa potrebbe essere un'implementa
 
 
 const buttonGenera = document.getElementById('genera');
+const buttonAn = document.getElementById("annulla");
+
+buttonAn.addEventListener("click", function(){
+    const notVisible = document.querySelector("#biglietto-treno");
+    notVisible.classList.add('d-none');
+})
 
 
 buttonGenera.addEventListener("click", function(){
@@ -29,6 +35,7 @@ buttonGenera.addEventListener("click", function(){
     const nome = document.getElementById("name").value;
     const numeroKm = parseInt(document.querySelector("#chilometri").value);
     const eta = document.getElementById("eta").value;
+    let counter = 0;
     console.log("numero chilometri", numeroKm , typeof numeroKm);
     console.log("eta", eta , typeof eta);
     console.log("nome", nome , typeof nome);
@@ -55,10 +62,12 @@ buttonGenera.addEventListener("click", function(){
         const numeroCarrozza = Math.floor((Math.random() * 20) + 1);
         const numeroCp = Math.floor((Math.random() * 1000) + 8000);
         //output dati
-        /*
-        const notVisible = document.querySelector(".d-none");
+        counter ++;
+        
+        const notVisible = document.querySelector("#biglietto-treno");
         notVisible.classList.toggle('d-none');
-        */
+        
+        
 ;
         document.querySelector(".prezzo").innerHTML = (prezzoBiglietto) + "€"; 
         document.querySelector("#nomeCognome").innerHTML = nome;
