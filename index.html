@@ -15,9 +15,44 @@
 
 <body>
     <header>
-        project initializaded
+       
     </header>
-    <main>
+    <main class="p-3">
+        <div class="container-md ">
+            <h1 class="text-center text-white text-uppercase mb-5">calcola il prezzo del tuo biglietto</h1>
+            <div class="row">
+                <div class="col-12 bg-white border-radius-25 p-5 mb-5">
+                   <form action="" method="get">
+                        <div class="row  text-center">
+                            <div class="col-6">
+                                <label  class="d-block" for="chilometri">
+                                    Km da percorrere         
+                                </label>
+                                <input class="border-main border-radius-5" type="number" id="chilometri" required>
+                            </div>
+                            <div class="col-6">
+                                <label class="d-block" for="">
+                                    Età
+                                </label>
+                                <input class="border-main border-radius-5" type="number" id="eta" required>
+                            </div>
+                            <div class="col-12 p-5">
+                                <button class="border-radius-25 text-main me-5" type="button">
+                                    Genera
+                                </button>
+                                <button class="border-radius-25 text-main" type="reset">
+                                    Annulla
+                                </button>
+                            </div>
+                        </div>   
+                   </form>
+                </div>
+                <div class="col-12 bg-white border-radius-25 p-5">
+                    <p class="prezzo"></p>
+                </div>
+            </div>
+
+        </div>
 
     </main>
     <!--js bootstrap-->

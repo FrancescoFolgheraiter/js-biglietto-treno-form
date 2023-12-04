@@ -1,8 +1,41 @@
-
+/*
+    ROOT
+*/
+:root {
+    --main-color:#b91450;
+}
 /*
     GENERAL
 */
 
 html{
     font-family: Arial, Helvetica, sans-serif;
+}
+
+/*utility*/
+.bg-white{
+    background-color: white;
+}
+.bg-white{
+    background-color: white;
+}
+.border-radius-25{
+    border-radius:25px;
+}
+.border-radius-5{
+    border-radius:5px;
+}
+.border-main{
+    border:1px solid var(--main-color);
+}
+.text-main{
+    color: var(--main-color);
+}
+
+/*
+    MAIN
+*/
+main{
+    background-color: var(--main-color);
+    height:100vh;
 }
